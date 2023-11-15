@@ -52,6 +52,9 @@ while True:
         rostro = auxframe[y:y + h, x:x + w]
         rostro = cv2.resize(rostro, (150,150), interpolation=cv2.INTER_CUBIC)
 
+        cv2.imwrite(personPath + '/rotro_{}.jpg'.format(contador), rostro)
+        print('rotro_{}.jpg'.format(contador) + ' guardado')
+
 # --------------------------------------------------------------------------
 # Cierra la cámara y las ventanas - no borres estas lineas
 # Deja estas lineas hasta abajo
