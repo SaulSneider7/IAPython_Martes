@@ -34,8 +34,11 @@ for nameDir in peopleList:
     label = labels + 1
 
 #Creamos un objeto para reconocer los rostros
-
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 print("Entrenando Modelo ...")
 face_recognizer.train(facesData, np.array(labels))
+
+#Almacenamos el modelo que se obtuvo
+face_recognizer.write('modelo.xml')
+print('Modelo almacenado correctamente')
