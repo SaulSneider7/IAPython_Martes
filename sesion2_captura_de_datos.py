@@ -61,6 +61,9 @@ while True:
     cv2.imshow('frame', frame)
 
     #Cerrar o terminar la ejecucion cuando se presione la letra 'q'
+    if contador >= 300 or cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
 
 # --------------------------------------------------------------------------
 # Cierra la cámara y las ventanas - no borres estas lineas
