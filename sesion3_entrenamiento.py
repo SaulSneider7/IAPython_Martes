@@ -31,7 +31,7 @@ for nameDir in peopleList:
         facesData.append(cv2.imread(personPath + '/' + fileName, 0))
 
     # Incrementa label cuando se cambia de carpeta
-    label = labels + 1
+    label = label + 1
 
 #Creamos un objeto para reconocer los rostros
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
