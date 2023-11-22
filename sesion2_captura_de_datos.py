@@ -55,6 +55,13 @@ while True:
         cv2.imwrite(personPath + '/rotro_{}.jpg'.format(contador), rostro)
         print('rotro_{}.jpg'.format(contador) + ' guardado')
 
+        contador = contador + 1
+
+    #Monstrar la imagen en pantalla
+    cv2.imshow('frame', frame)
+
+    #Cerrar o terminar la ejecucion cuando se presione la letra 'q'
+
 # --------------------------------------------------------------------------
 # Cierra la cámara y las ventanas - no borres estas lineas
 # Deja estas lineas hasta abajo
