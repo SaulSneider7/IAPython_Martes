@@ -46,7 +46,14 @@ while True:
 
     # -------------------------------------------------------------------------
     # Escribe tu código aquí:
+    for (x, y , w, h) in faces:
 
+        #extraer rostros de la imagen original
+        rostro = auxFrame[y:y + h, x:x + w]
+
+        rostro = cv2.resize(rostro, (150,150))
+
+        result = face_recognizer.predict(rostro)
 
 
     # -------------------------------------------------------------------------
