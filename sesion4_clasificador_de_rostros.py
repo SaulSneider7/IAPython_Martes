@@ -55,6 +55,18 @@ while True:
 
         result = face_recognizer.predict(rostro)
 
+        #Anotar resultados numericos enpantalla
+        cv2.putText(frame, '{}'.format(result), (x, y - 5), 1, 1, (255,255,0))
+
+        # Mostrar resultados escritos en pantalla
+        if result[1] < 75:
+            # Escribe el nombre de la empresa identificada arriba del rostro
+            cv2.putText(frame, '{}'.format(imagePaths[result[0]]), (x, y -25), 2, 1, (0,255,0))
+            cv2.rectangle(frame, (x,y), (x + w, y + h), (0, 255, 0), 2) #Crea un rectangulo verde
+        else:
+            # Escribe la palabra "Desconocido" si no se identifica a ninguna persona
+            cv2.putText(frame, 'Desconocido', (x, y -20), 2, 1, (0, 0, 255))
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)  # Crea un rectangulo rojo
 
     # -------------------------------------------------------------------------
     # No modifiques el codigo debajo de esta linea:
